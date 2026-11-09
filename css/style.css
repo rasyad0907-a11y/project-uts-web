@@ -1,0 +1,1389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--primary:#2563eb;
+--primary-dark:#1d4ed8;
+--dark:#111827;
+--gray:#64748b;
+--light:#f8fafc;
+--white:#ffffff;
+--border:#e5e7eb;
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:100px;
+}
+
+body{
+background:#ffffff;
+color:var(--dark);
+font-size:15px;
+line-height:1.7;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+header{
+width:100%;
+height:85px;
+position:sticky;
+top:0;
+z-index:1000;
+padding-top:14px;
+background:transparent;
+pointer-events:none;
+}
+
+nav{
+pointer-events:auto;
+width:92%;
+max-width:1250px;
+height:60px;
+margin:auto;
+padding:0 10px 0 28px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(255,255,255,0.55);
+-webkit-backdrop-filter:blur(22px) saturate(180%);
+backdrop-filter:blur(22px) saturate(180%);
+border:1px solid rgba(255,255,255,0.65);
+border-radius:999px;
+box-shadow:0 8px 30px rgba(15,23,42,0.08);
+transition:all 0.35s ease;
+}
+
+header.rasyad_scrolled nav{
+height:56px;
+background:rgba(255,255,255,0.72);
+-webkit-backdrop-filter:blur(25px) saturate(190%);
+backdrop-filter:blur(25px) saturate(190%);
+border-color:rgba(255,255,255,0.8);
+box-shadow:0 12px 35px rgba(15,23,42,0.12);
+}
+
+nav h2{
+font-size:24px;
+font-weight:800;
+letter-spacing:1px;
+color:var(--dark);
+}
+
+.rasyad_logo_dot{
+color:var(--primary);
+}
+
+nav ul{
+display:flex;
+align-items:center;
+gap:4px;
+list-style:none;
+}
+
+nav ul li a{
+display:block;
+padding:9px 15px;
+border-radius:999px;
+font-size:13px;
+font-weight:500;
+color:#475569;
+transition:0.3s;
+position:relative;
+}
+
+nav ul li a:hover{
+color:var(--primary);
+background:rgba(219,234,254,0.65);
+}
+
+nav ul li a.rasyad_active{
+color:#ffffff;
+background:linear-gradient(135deg,#2563eb,#4f8cff);
+box-shadow:0 6px 16px rgba(37,99,235,0.35);
+}
+
+.rasyad_menu_btn{
+display:none;
+width:42px;
+height:42px;
+border:none;
+border-radius:50%;
+background:#eff6ff;
+cursor:pointer;
+position:relative;
+flex-shrink:0;
+}
+
+.rasyad_menu_btn span{
+position:absolute;
+left:12px;
+width:18px;
+height:2px;
+border-radius:2px;
+background:var(--primary);
+transition:0.35s;
+}
+
+.rasyad_menu_btn span:nth-child(1){top:14px;}
+.rasyad_menu_btn span:nth-child(2){top:20px;}
+.rasyad_menu_btn span:nth-child(3){top:26px;}
+
+.rasyad_menu_open .rasyad_menu_btn span:nth-child(1){top:20px;transform:rotate(45deg);}
+.rasyad_menu_open .rasyad_menu_btn span:nth-child(2){opacity:0;}
+.rasyad_menu_open .rasyad_menu_btn span:nth-child(3){top:20px;transform:rotate(-45deg);}
+
+.rasyad_progress{
+position:fixed;
+top:0;
+left:0;
+height:3px;
+width:0;
+background:linear-gradient(90deg,#2563eb,#7c3aed,#06b6d4);
+z-index:1100;
+}
+
+section{
+width:100%;
+padding:100px 8%;
+}
+
+.rasyad_home{
+min-height:calc(100vh - 85px);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+max-width:1500px;
+margin:auto;
+}
+
+.rasyad_home_content{
+flex:1;
+max-width:650px;
+animation:slideLeft 1s ease;
+}
+
+.rasyad_home_content h3{
+font-size:14px;
+letter-spacing:4px;
+color:var(--primary);
+font-weight:700;
+margin-bottom:15px;
+}
+
+.rasyad_home_content h1{
+font-size:clamp(35px,5vw,65px);
+line-height:1.2;
+font-weight:800;
+letter-spacing:-2px;
+margin-bottom:15px;
+}
+
+.rasyad_home_content h2{
+font-size:22px;
+font-weight:600;
+color:#64748b;
+margin-bottom:20px;
+}
+
+.rasyad_home_content p{
+color:var(--gray);
+font-size:15px;
+line-height:1.9;
+max-width:580px;
+margin-bottom:30px;
+}
+
+.rasyad_btn{
+display:inline-block;
+padding:13px 27px;
+margin-right:10px;
+margin-bottom:10px;
+border-radius:8px;
+background:var(--primary);
+color:white;
+font-weight:600;
+font-size:13px;
+transition:0.3s;
+}
+
+.rasyad_btn:hover{
+background:var(--primary-dark);
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(37,99,235,0.2);
+}
+
+.rasyad_home_image{
+flex:0 0 390px;
+height:450px;
+position:relative;
+animation:slideRight 1s ease;
+}
+
+.rasyad_home_image::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:#dbeafe;
+border-radius:25px;
+transform:rotate(6deg);
+}
+
+.rasyad_home_image img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+position:relative;
+border-radius:25px;
+border:7px solid white;
+box-shadow:0 20px 50px rgba(15,23,42,0.13);
+}
+
+.rasyad_profile{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:75px;
+min-height:calc(100vh - 85px);
+max-width:1400px;
+margin:auto;
+}
+
+.rasyad_profile_image{
+flex:0 0 350px;
+height:420px;
+}
+
+.rasyad_profile_image img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:20px;
+box-shadow:15px 15px 0 #dbeafe,0 15px 40px rgba(0,0,0,0.1);
+}
+
+.rasyad_profile_content{
+max-width:650px;
+}
+
+.rasyad_profile_content h1,
+.rasyad_education h1,
+.rasyad_experience h1,
+.rasyad_skills h1,
+.rasyad_project h1,
+.rasyad_gallery h1,
+.rasyad_contact h1{
+font-size:38px;
+font-weight:800;
+letter-spacing:-1px;
+margin-bottom:12px;
+}
+
+.rasyad_profile_content h1::after,
+.rasyad_education h1::after,
+.rasyad_experience h1::after,
+.rasyad_skills h1::after,
+.rasyad_project h1::after,
+.rasyad_gallery h1::after,
+.rasyad_contact h1::after{
+content:"";
+display:block;
+width:65px;
+height:4px;
+background:var(--primary);
+margin-top:12px;
+border-radius:5px;
+}
+
+.rasyad_profile_content h2{
+font-size:25px;
+margin-top:25px;
+margin-bottom:5px;
+}
+
+.rasyad_profile_content h3{
+font-size:15px;
+color:var(--primary);
+margin-bottom:20px;
+}
+
+.rasyad_profile_content>p{
+color:var(--gray);
+margin-bottom:15px;
+line-height:1.9;
+}
+
+.rasyad_profile_info{
+margin-top:25px;
+padding:20px 25px;
+background:var(--light);
+border-left:4px solid var(--primary);
+border-radius:10px;
+}
+
+.rasyad_profile_info p{
+margin:8px 0;
+font-size:14px;
+color:#475569;
+}
+
+.rasyad_profile_info strong{
+color:var(--dark);
+}
+
+.rasyad_education,
+.rasyad_experience,
+.rasyad_skills,
+.rasyad_project,
+.rasyad_gallery,
+.rasyad_contact{
+min-height:calc(100vh - 85px);
+max-width:1500px;
+margin:auto;
+text-align:center;
+}
+
+.rasyad_education>p,
+.rasyad_experience>p,
+.rasyad_skills>p,
+.rasyad_project>p,
+.rasyad_gallery>p,
+.rasyad_contact>p{
+color:var(--gray);
+margin:15px 0 45px;
+}
+
+.rasyad_education h1::after,
+.rasyad_experience h1::after,
+.rasyad_skills h1::after,
+.rasyad_project h1::after,
+.rasyad_gallery h1::after,
+.rasyad_contact h1::after{
+margin-left:auto;
+margin-right:auto;
+}
+
+.rasyad_education_container,
+.rasyad_experience_container,
+.rasyad_project_container,
+.rasyad_contact_container{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:25px;
+max-width:1000px;
+margin:45px auto 0;
+text-align:left;
+}
+
+.rasyad_education_card,
+.rasyad_experience_card,
+.rasyad_project_card,
+.rasyad_contact_card{
+background:#ffffff;
+padding:30px;
+border:1px solid var(--border);
+border-radius:15px;
+box-shadow:0 8px 25px rgba(15,23,42,0.04);
+transition:0.35s;
+position:relative;
+overflow:hidden;
+}
+
+.rasyad_education_card::before,
+.rasyad_experience_card::before,
+.rasyad_project_card::before,
+.rasyad_contact_card::before{
+content:"";
+position:absolute;
+width:4px;
+height:100%;
+background:var(--primary);
+top:0;
+left:0;
+}
+
+.rasyad_education_card:hover,
+.rasyad_experience_card:hover,
+.rasyad_project_card:hover,
+.rasyad_contact_card:hover{
+transform:translateY(-8px);
+border-color:#bfdbfe;
+box-shadow:0 18px 35px rgba(37,99,235,0.10);
+}
+
+.rasyad_education_card h2,
+.rasyad_experience_card h2,
+.rasyad_project_card h2,
+.rasyad_contact_card h2{
+font-size:19px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.rasyad_education_card h3,
+.rasyad_experience_card h3{
+font-size:14px;
+color:var(--primary);
+margin-bottom:12px;
+}
+
+.rasyad_education_card p,
+.rasyad_experience_card p,
+.rasyad_project_card p,
+.rasyad_contact_card p{
+font-size:13px;
+color:var(--gray);
+line-height:1.8;
+}
+
+.rasyad_experience_category{
+display:inline-block;
+font-size:10px;
+font-weight:700;
+letter-spacing:2px;
+color:#2563eb;
+background:#eff6ff;
+padding:6px 12px;
+border-radius:5px;
+margin-bottom:15px;
+}
+
+.rasyad_experience_card{
+min-height:260px;
+}
+
+.rasyad_experience_card h3{
+font-size:13px;
+color:#64748b;
+margin-bottom:12px;
+}
+
+.rasyad_education_container{
+grid-template-columns:repeat(2,minmax(0,1fr));
+max-width:850px;
+}
+
+.rasyad_education_card h3{
+font-size:13px;
+color:#2563eb;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.rasyad_education_card h2{
+font-size:19px;
+margin-bottom:8px;
+}
+
+.rasyad_education_card p{
+font-size:13px;
+color:#64748b;
+}
+
+.rasyad_skills_container{
+display:grid;
+grid-template-columns:repeat(5,minmax(0,1fr));
+gap:14px;
+max-width:1000px;
+margin:45px auto 0;
+text-align:left;
+}
+
+.rasyad_skill_item{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:10px;
+min-height:55px;
+padding:10px 13px;
+background:#f8fafc;
+border:1px solid var(--border);
+border-radius:9px;
+transition:0.3s;
+}
+
+.rasyad_skill_item:hover{
+transform:translateY(-4px);
+border-color:#bfdbfe;
+box-shadow:0 8px 20px rgba(37,99,235,0.08);
+}
+
+.rasyad_skill_item img{
+width:24px;
+height:24px;
+object-fit:contain;
+flex-shrink:0;
+}
+
+.rasyad_skill_item span{
+font-size:12px;
+font-weight:600;
+color:#334155;
+}
+
+.rasyad_project_card a,
+.rasyad_contact_card a{
+display:inline-block;
+margin-top:20px;
+padding:9px 18px;
+border-radius:7px;
+background:var(--primary);
+color:white;
+font-size:12px;
+font-weight:600;
+transition:0.3s;
+}
+
+.rasyad_project_card a:hover,
+.rasyad_contact_card a:hover{
+background:var(--primary-dark);
+transform:translateY(-3px);
+}
+
+.rasyad_gallery_container{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:25px;
+margin-top:40px;
+text-align:left;
+}
+
+.rasyad_gallery_item{
+background:white;
+border:1px solid var(--border);
+border-radius:13px;
+overflow:hidden;
+transition:0.35s;
+box-shadow:0 7px 20px rgba(15,23,42,0.05);
+cursor:pointer;
+}
+
+.rasyad_gallery_item:hover{
+transform:translateY(-8px);
+box-shadow:0 18px 35px rgba(15,23,42,0.12);
+}
+
+.rasyad_gallery_item img{
+width:100%;
+height:260px;
+object-fit:cover;
+background:#f1f5f9;
+transition:0.5s;
+}
+
+.rasyad_gallery_item:hover img{
+transform:scale(1.04);
+}
+
+.rasyad_gallery_item h3{
+font-size:14px;
+font-weight:600;
+padding:16px 18px;
+color:var(--dark);
+}
+
+.rasyad_contact_card{
+text-align:center;
+padding:35px 25px;
+}
+
+.rasyad_contact_card::before{
+width:100%;
+height:4px;
+top:0;
+left:0;
+}
+
+.rasyad_contact_card h2{
+color:var(--dark);
+}
+
+footer{
+padding:25px 8%;
+background:#111827;
+color:#cbd5e1;
+text-align:center;
+font-size:12px;
+}
+
+@keyframes slideLeft{
+from{
+opacity:0;
+transform:translateX(-40px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+@keyframes slideRight{
+from{
+opacity:0;
+transform:translateX(40px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+.rasyad_gallery_lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.92);
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:30px;
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+}
+
+.rasyad_gallery_lightbox.rasyad_show{
+opacity:1;
+visibility:visible;
+}
+
+.rasyad_gallery_lightbox img{
+max-width:90%;
+max-height:85vh;
+object-fit:contain;
+border-radius:10px;
+}
+
+.rasyad_gallery_lightbox .rasyad_close_lightbox{
+position:absolute;
+top:25px;
+right:35px;
+font-size:35px;
+color:white;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.rasyad_gallery_lightbox .rasyad_lightbox_caption{
+position:absolute;
+bottom:20px;
+color:white;
+font-size:14px;
+text-align:center;
+}
+
+@media(max-width:1100px){
+
+nav{
+width:94%;
+}
+
+nav ul{
+gap:13px;
+}
+
+nav ul li a{
+font-size:11px;
+}
+
+.rasyad_home_image{
+flex-basis:320px;
+height:380px;
+}
+
+.rasyad_profile{
+gap:45px;
+}
+
+.rasyad_skills_container{
+grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+}
+
+@media(max-width:850px){
+
+header{
+height:auto;
+}
+
+nav{
+padding:12px 0;
+flex-direction:column;
+gap:12px;
+}
+
+nav ul{
+flex-wrap:nowrap;
+justify-content:flex-start;
+width:100%;
+overflow-x:auto;
+padding:8px 0 12px;
+scrollbar-width:none;
+}
+
+nav ul::-webkit-scrollbar{
+display:none;
+}
+
+nav ul li{
+flex-shrink:0;
+}
+
+nav ul li a{
+font-size:12px;
+}
+
+.rasyad_home{
+min-height:auto;
+}
+
+.rasyad_profile{
+min-height:auto;
+flex-direction:column;
+text-align:center;
+}
+
+.rasyad_profile_image{
+width:300px;
+height:350px;
+flex:none;
+}
+
+.rasyad_profile_content h1::after{
+margin-left:auto;
+margin-right:auto;
+}
+
+.rasyad_profile_info{
+text-align:left;
+}
+
+.rasyad_gallery_container{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+}
+
+@media(max-width:600px){
+
+section{
+padding:65px 6%;
+}
+
+nav h2{
+font-size:25px;
+}
+
+nav ul{
+gap:12px 15px;
+}
+
+nav ul li a{
+font-size:11px;
+}
+
+.rasyad_home{
+flex-direction:column-reverse;
+text-align:center;
+gap:40px;
+padding-top:65px;
+padding-bottom:65px;
+}
+
+.rasyad_home_content h1{
+font-size:38px;
+}
+
+.rasyad_home_content h2{
+font-size:17px;
+}
+
+.rasyad_home_content p{
+font-size:13px;
+}
+
+.rasyad_home_image{
+width:250px;
+height:290px;
+flex:none;
+}
+
+.rasyad_profile_image{
+width:240px;
+height:290px;
+}
+
+.rasyad_profile_content h1,
+.rasyad_education h1,
+.rasyad_experience h1,
+.rasyad_skills h1,
+.rasyad_project h1,
+.rasyad_gallery h1,
+.rasyad_contact h1{
+font-size:30px;
+}
+
+.rasyad_profile_content h2{
+font-size:21px;
+}
+
+.rasyad_education_container,
+.rasyad_experience_container,
+.rasyad_project_container,
+.rasyad_contact_container{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.rasyad_education_card,
+.rasyad_experience_card,
+.rasyad_project_card,
+.rasyad_contact_card{
+padding:25px;
+}
+
+.rasyad_skills_container{
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:9px;
+}
+
+.rasyad_skill_item{
+min-height:48px;
+padding:8px 9px;
+gap:7px;
+}
+
+.rasyad_skill_item img{
+width:21px;
+height:21px;
+}
+
+.rasyad_skill_item span{
+font-size:11px;
+}
+
+.rasyad_gallery_container{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.rasyad_gallery_item img{
+height:260px;
+}
+
+.rasyad_btn{
+padding:11px 20px;
+font-size:12px;
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+scroll-behavior:auto;
+animation:none!important;
+transition:none!important;
+}
+
+}
+
+.rasyad_skill_card{
+background:#ffffff;
+border:1px solid var(--border);
+border-radius:12px;
+padding:22px;
+text-align:left;
+}
+
+.rasyad_skill_card h2{
+font-size:17px;
+margin-bottom:18px;
+color:#1e293b;
+}
+
+.rasyad_skill_item{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:13px;
+}
+
+.rasyad_skill_item img{
+width:21px;
+height:21px;
+object-fit:contain;
+}
+
+.rasyad_skill_item p{
+font-size:13px;
+color:#475569;
+margin:0;
+}
+
+.rasyad_skill_badge{
+width:24px;
+height:24px;
+border-radius:6px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-style:normal;
+font-size:9px;
+font-weight:700;
+color:#fff;
+flex-shrink:0;
+}
+
+.rasyad_skills_container:has(.rasyad_skill_card){
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:25px;
+max-width:900px;
+}
+
+@media(max-width:600px){
+.rasyad_skills_container:has(.rasyad_skill_card){
+grid-template-columns:1fr;
+}
+}
+
+.rasyad_skill_item img.rasyad_logo_zoom{
+transform:scale(1.45);
+}
+
+.rasyad_contact_container{
+grid-template-columns:repeat(3,minmax(0,1fr));
+max-width:1000px;
+gap:28px;
+}
+
+a.rasyad_contact_card{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:40px 26px 32px;
+color:inherit;
+--c:#2563eb;
+background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+border-radius:20px;
+}
+
+a.rasyad_contact_wa{--c:#25d366;}
+a.rasyad_contact_ig{--c:#e1306c;}
+a.rasyad_contact_mail{--c:#2563eb;}
+
+a.rasyad_contact_card::before{
+width:100%;
+height:5px;
+background:var(--c);
+}
+
+a.rasyad_contact_card::after{
+content:"";
+position:absolute;
+width:180px;
+height:180px;
+right:-70px;
+bottom:-70px;
+border-radius:50%;
+background:var(--c);
+opacity:0.07;
+transition:0.4s;
+}
+
+a.rasyad_contact_card:hover{
+transform:translateY(-10px);
+border-color:var(--c);
+box-shadow:0 22px 45px rgba(15,23,42,0.12);
+}
+
+a.rasyad_contact_card:hover::after{
+transform:scale(1.6);
+opacity:0.12;
+}
+
+.rasyad_contact_icon{
+width:72px;
+height:72px;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:var(--c);
+background:color-mix(in srgb,var(--c) 12%,white);
+margin-bottom:22px;
+transition:0.35s;
+}
+
+.rasyad_contact_icon svg{
+width:34px;
+height:34px;
+}
+
+a.rasyad_contact_card:hover .rasyad_contact_icon{
+background:var(--c);
+color:#fff;
+transform:rotate(-6deg) scale(1.08);
+}
+
+a.rasyad_contact_card h2{
+margin-bottom:6px;
+}
+
+.rasyad_contact_handle{
+font-size:14px;
+font-weight:600;
+color:var(--c);
+word-break:break-all;
+margin-bottom:12px;
+}
+
+a.rasyad_contact_card p{
+max-width:240px;
+}
+
+.rasyad_contact_btn{
+display:inline-block;
+margin-top:24px;
+padding:10px 22px;
+border-radius:999px;
+background:var(--dark);
+color:#fff;
+font-size:12px;
+font-weight:600;
+transition:0.3s;
+position:relative;
+z-index:1;
+}
+
+a.rasyad_contact_card:hover .rasyad_contact_btn{
+background:var(--c);
+}
+
+@media(max-width:850px){
+.rasyad_contact_container{
+grid-template-columns:1fr;
+max-width:420px;
+}
+}
+
+.rasyad_contact{
+min-height:auto;
+padding-top:70px;
+padding-bottom:70px;
+}
+
+.rasyad_contact>p{
+margin:12px 0 0;
+}
+
+.rasyad_contact_container{
+max-width:760px;
+gap:18px;
+margin-top:30px;
+}
+
+a.rasyad_contact_card{
+padding:24px 16px 20px;
+border-radius:16px;
+}
+
+a.rasyad_contact_card::before{
+height:4px;
+}
+
+a.rasyad_contact_card::after{
+width:110px;
+height:110px;
+right:-40px;
+bottom:-40px;
+}
+
+.rasyad_contact_icon{
+width:50px;
+height:50px;
+border-radius:14px;
+margin-bottom:14px;
+}
+
+.rasyad_contact_icon svg{
+width:24px;
+height:24px;
+}
+
+a.rasyad_contact_card h2{
+font-size:16px;
+margin-bottom:4px;
+}
+
+.rasyad_contact_handle{
+font-size:12px;
+margin-bottom:0;
+}
+
+a.rasyad_contact_card p{
+display:none;
+}
+
+.rasyad_contact_btn{
+margin-top:16px;
+padding:7px 18px;
+font-size:11px;
+}
+
+a.rasyad_contact_card:hover{
+transform:translateY(-6px);
+}
+
+@media(max-width:850px){
+.rasyad_contact_container{
+max-width:300px;
+}
+}
+
+.rasyad_contact_container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:22px;
+max-width:none;
+margin-top:30px;
+}
+
+a.rasyad_contact_card{
+width:62px;
+height:62px;
+padding:0;
+border-radius:50%;
+justify-content:center;
+background:#ffffff;
+box-shadow:0 6px 18px rgba(15,23,42,0.08);
+}
+
+a.rasyad_contact_card::before,
+a.rasyad_contact_card::after{
+display:none;
+}
+
+a.rasyad_contact_card h2,
+.rasyad_contact_handle,
+a.rasyad_contact_card p,
+.rasyad_contact_btn{
+position:absolute;
+width:1px;
+height:1px;
+margin:0;
+padding:0;
+overflow:hidden;
+clip:rect(0,0,0,0);
+white-space:nowrap;
+}
+
+.rasyad_contact_icon{
+width:100%;
+height:100%;
+margin:0;
+border-radius:50%;
+background:transparent;
+}
+
+.rasyad_contact_icon svg{
+width:26px;
+height:26px;
+}
+
+a.rasyad_contact_card:hover{
+background:var(--c);
+border-color:var(--c);
+transform:translateY(-6px);
+box-shadow:0 12px 26px rgba(15,23,42,0.18);
+}
+
+a.rasyad_contact_card:hover .rasyad_contact_icon{
+background:transparent;
+color:#fff;
+transform:scale(1.1);
+}
+
+@media(max-width:850px){
+.rasyad_contact_container{
+max-width:none;
+}
+}
+
+.rasyad_contact_form{
+max-width:560px;
+margin:35px auto 0;
+text-align:left;
+padding:30px;
+background:#ffffff;
+border:1px solid var(--border);
+border-radius:16px;
+box-shadow:0 8px 25px rgba(15,23,42,0.05);
+}
+
+.rasyad_form_group{margin-bottom:16px;}
+
+.rasyad_form_group label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:6px;
+color:#334155;
+}
+
+.rasyad_form_group input,
+.rasyad_form_group textarea{
+width:100%;
+padding:12px 14px;
+font-size:14px;
+border:1px solid #cbd5e1;
+border-radius:9px;
+background:#f8fafc;
+color:var(--dark);
+transition:0.3s;
+resize:vertical;
+}
+
+.rasyad_form_group input:focus,
+.rasyad_form_group textarea:focus{
+outline:none;
+border-color:var(--primary);
+background:#ffffff;
+box-shadow:0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.rasyad_form_actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:6px;
+}
+
+.rasyad_form_btn{
+flex:1;
+min-width:150px;
+padding:12px 20px;
+font-size:13px;
+font-weight:600;
+color:#ffffff;
+background:var(--primary);
+border:none;
+border-radius:9px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.rasyad_form_btn:hover{
+background:var(--primary-dark);
+transform:translateY(-3px);
+}
+
+.rasyad_form_btn_alt{background:var(--dark);}
+.rasyad_form_btn_alt:hover{background:#1f2937;}
+
+.rasyad_form_status{
+margin-top:14px;
+font-size:13px;
+min-height:18px;
+}
+
+.rasyad_status_error{color:#dc2626;}
+.rasyad_status_ok{color:#16a34a;}
+
+.rasyad_education_number,
+.rasyad_experience_number{
+position:absolute;
+top:16px;
+right:22px;
+font-size:34px;
+font-weight:800;
+line-height:1;
+color:#dbeafe;
+}
+
+@media(max-width:960px){
+
+header{
+height:76px;
+padding-top:12px;
+}
+
+header nav{
+width:94%;
+height:54px;
+padding:0 8px 0 20px;
+flex-direction:row;
+gap:0;
+position:relative;
+}
+
+.rasyad_menu_btn{
+display:block;
+}
+
+header nav ul{
+position:absolute;
+top:calc(100% + 12px);
+left:0;
+right:0;
+width:auto;
+flex-direction:column;
+align-items:stretch;
+justify-content:flex-start;
+gap:4px;
+overflow:visible;
+padding:14px;
+background:rgba(255,255,255,0.65);
+-webkit-backdrop-filter:blur(25px) saturate(180%);
+backdrop-filter:blur(25px) saturate(180%);
+border:1px solid rgba(255,255,255,0.8);
+border-radius:24px;
+box-shadow:0 20px 50px rgba(15,23,42,0.15);
+opacity:0;
+visibility:hidden;
+transform:translateY(-12px) scale(0.98);
+transform-origin:top;
+transition:0.3s;
+}
+
+header nav.rasyad_menu_open ul{
+opacity:1;
+visibility:visible;
+transform:none;
+}
+
+header nav ul li{
+flex-shrink:1;
+}
+
+header nav ul li a{
+font-size:14px;
+padding:12px 18px;
+border-radius:14px;
+}
+
+}
