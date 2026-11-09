@@ -1387,3 +1387,28 @@ border-radius:14px;
 }
 
 }
+
+/* PERBAIKAN RESPONSIVE MENU MOBILE */
+@media (max-width: 960px) {
+    header nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav ul {
+        max-height: 75vh;
+        overflow-y: auto;
+    }
+
+    header nav.rasyad_menu_open ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (min-width: 961px) {
+    .rasyad_menu_btn {
+        display: none !important;
+    }
+}
